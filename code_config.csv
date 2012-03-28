@@ -1,0 +1,4 @@
+letters,5
+mixcase,true
+#charset,0123456789abcdefghijklmnopqrstuvwxyz
+#file,code_generators/dictionary/7letter.txt

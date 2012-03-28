@@ -1,0 +1,37 @@
+#ivar_project_small {
+	position: absolute;
+	top: 5px;
+	right: 20px;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+#ivar_project_small h3 {
+	font-size: 19px;
+	letter-spacing: 1px;
+	color: #c5c5c5;
+	float: left;
+	font-weight: normal;
+}
+
+#ivar_project_small img {
+	float: left;
+	margin-top: 5px;
+	margin-right: 5px;
+}
+
+.logo {
+	padding: 20px 0;
+
+}
+
+.lead {
+	color: #555;
+}
+
+#captcha .captcha-container {
+	float: left;
+}
+
+#captcha .refreash-container {
+	float: left;
+}

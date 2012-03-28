@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   		<meta charset="utf-8">
+   		
+		<title>Captchino</title>
+		
+		<meta name="description" content="eye appealing, simple, modular PHP captcha!">
+		<meta name="author" content="http://www.ivartech.com/">
+		
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<script src="js/jquery-1.7.2.js" type="text/javascript"></script>
+		<script src="js/bootstrap.min.js" type="text/javascript"></script>
+		<script src="form.js" type="text/javascript"></script>
+	</head>
+	<body>
+		<div id="ivar_project_small" class="clearfix">
+			<a href="http://ivartech.com"><img src="img/ivar_logo.png" alt="iVar" />  <h3>Project</h3></a>
+		</div>
+		<div class="container">
+			<div class="logo">
+				<img src="img/captchino_logo.png" alt="captchino" title="eye appealing, simple, modular PHP captcha!" />
+			</div>
+			<p class="lead">eye appealing, simple, modular PHP captcha</p>
+			<section id="intro">
+			<p>An easy to setup captcha system written in PHP that works out of the box.
+			All parameters are optional, it just works. Feel free to supply optional 
+			parameters to tweak it to your liking. <strong> No PHP knowledge required </strong> to integrate and modify this captcha. </p>
+			<p>The demo built for this captcha is a simple email form prettified with Twitter 
+Bootstrap (<a href="http://twitter.github.com/bootstrap">http://twitter.github.com/bootstrap</a>) and made more fuctional with 
+jQuery (<a href="http://jquery.com">http://jquery.com</a>)</p>
+			
+			</section>
+			<div class="row">
+				<div class="span8">
+					<form class="form-horizontal">
+						<fieldset>
+							<legend>Demo</legend>
+							<div class="control-group email">
+								<label class="control-label" for="message-email">E Mail:</label>
+								<div class="controls">
+									<input id="message-email" class="input-xlarge" type="text"></input>
+								</div>
+							</div>
+							<div class="control-group subject">
+								<label class="control-label" for="message-subject">Subject: </label>
+								<div class="controls">
+									<input id="message-subject" class="input-xlarge" type="text"></input>
+								</div>
+							</div>
+							<div class="control-group text">
+								<label class="control-label" for="message-text">Message:</label>
+								<div class="controls">
+									<textarea id="message-text" class="input-xlarge" rows="3"></textarea>
+								</div>
+							</div>
+							<div class="control-group">
+								<div class="controls">
+									<div id="captcha" class="clearfix">
+									<div class="captcha-container"></div>
+									<div class="refresh-container"><div class="refresh btn" onclick="newCaptcha()"><i class="icon-refresh"></i></div></div>
+									</div>
+								</div>
+							</div>
+							<div class="control-group captcha">
+								<label class="control-label" for="message-captcha">Code:</label>
+								<div class="controls">
+									<input id="message-captcha" class="input-xlarge" type="text"></input>
+								</div>
+							</div>
+							<div class="control-group">
+								<div class="controls">
+									<div class="btn btn-success" onclick="sendMessage()">Send</div>
+								</div>
+							</div>
+							<div id="message-errors" class="alert alert-error" ><a class="close">&times;</a><ul></ul></div>
+							<div id="message-sent" class="alert alert-success">Message sent!<a class="close">&times;</a></div>
+						</fieldset>
+					</form>
+				</div>
+				<div class="span4">
+				 	<h3>Why should you use it?</h3>
+				 	<ul>
+				 		<li>Easy integration</li>
+				 		<li>Total customisability</li>
+				 		<li>Flexible expansion framework</li>
+				 		<li>You'll make us happy :)</li>
+				 	</ul>
+				 	<hr>
+				 	<h3>Modify and share</h3>
+				 	<a href="http://www.gnu.org/copyleft/lesser.html"><img src="img/lgplv3-88x31.png" /></a>
+				 	<hr>
+				 	<h3>Brought to you by</h3>
+				 	<p> Nikola Stamatovic Stamat and Nemanja Stojanovic </p>
+				 	<p><a href="http://ivartech.com">iVar</a> - March 2012. </p>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

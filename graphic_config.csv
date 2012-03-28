@@ -1,0 +1,15 @@
+#font,graphic_generators/colorful/FreeSans.ttf
+#font_size,26
+#alpha,30
+#angle,15
+#strikethrough,false
+#noise,false
+#wave,false
+#colors,#ff0c00;#ffa200;#ffe400;
+#thickness,1
+#lines,10
+#amplitude,5
+#period,10
+#jumpy,0.2
+#letterdist,0.7
+#randomsize,0.1
