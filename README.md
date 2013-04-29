@@ -119,6 +119,10 @@ activated.
 Are directories for captchino plugins. For developing a plugin use already developed
 plugins as a guideline.
 
+DEPENDENCY
+----------
+GD module!!!
+
 
 DEMO
 ----

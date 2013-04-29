@@ -1,5 +1,6 @@
 <?php
 
+/*
 # Captchino - eye appealing, easy, modular captcha
 #
 # iVar < http://ivartech.com > - March 2012.
@@ -9,6 +10,7 @@
 # Parses configuration files and load modules. Generates captcha code and returns
 # captcha image.
 # For module development use current modules as a guideline.
+*/
 
 include('utils/CSVConfig.php');
 
@@ -27,6 +29,7 @@ if ($config['code'] == 'random') {
 	if (!isset( $code_config['charset'])) {
 		$code_config['charset'] = null;
 	}
+	
 	$code = RandomCode::getCode($code_config['letters'], $code_config['mixcase'], $code_config['charset']);
 }
 

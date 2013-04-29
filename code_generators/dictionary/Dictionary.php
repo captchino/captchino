@@ -1,5 +1,6 @@
-<?
+<?php
 
+/*
 # Captchino - eye appealing, easy, modular captcha
 #
 # iVar < http://ivartech.com > - March 2012.
@@ -8,6 +9,7 @@
 #
 # Simple dictionary reader, reads dictionary files and returns one word. Word
 # dictionaries took from Scrabble(tm) game rule book.
+*/
 
 class Dictionary {
 

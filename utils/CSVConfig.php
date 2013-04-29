@@ -1,5 +1,6 @@
-<?
+<?php
 
+/*
 # CSVConfig reader
 #
 # iVar < http://ivartech.com > - March 2012.
@@ -7,7 +8,7 @@
 # See COPYING for licence information.
 #
 # Primitive 2 column CSV option reader, it maps data in a key > value array
-
+*/
 class CSVConfig {
 
 	static function csvRead($file) {

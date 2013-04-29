@@ -1,5 +1,6 @@
-<?
+<?php
 
+/*
 # Captchino - eye appealing, easy, modular captcha
 #
 # iVar < http://ivartech.com > - March 2012.
@@ -8,6 +9,7 @@
 #
 # First graphic generator, generates from given code and returns a PNG image, 
 # made to be eye apealing. Style can be defined in graphic_config.csv
+*/
 
 class Colorful { 
 
@@ -32,32 +34,32 @@ class Colorful {
 		if(isset($options)) {
 			$this->vars = $this->parseOptions($this->vars, $options);
 		}
-		
+	
 		$characters = strlen($code);  
 		
-    	$height = 2 * $this->vars['font_size'];
+		$height = 2 * $this->vars['font_size'];
 		$width = $this->vars['font_size'] * $this->vars['letterdist'] * ($characters + 2);
-	
-		$image = imagecreatetruecolor($width, $height);
+		
+		$image = @imagecreatetruecolor($width, $height) or die('Cannot Initialize new GD image stream');
 		$this->fillTransparency($image);
-	
+
 		$colors = $this->initColors($image, $this->vars['colors'], $this->vars['alpha']);
-	
+		
 		$this->paintCode($image, $code, $height, $this->vars['font'], $this->vars['font_size'], $this->vars['angle'], $colors, $this->vars['jumpy'], $this->vars['letterdist'], $this->vars['randomsize']);
-	
+		
 		if ($this->vars['strikethrough']) {
 			$this->strikethrough($image, $height, $width, $this->vars['font_size'], $colors);
 		}
-	
+
 		if ($this->vars['noise']) {
 			$this->addNoise($image, $height, $width, $colors, $this->vars['lines'], $this->vars['thickness']);
 		}
-		
+	
 		if ($this->vars['wave']) {
 			$image = $this->wave($image, $this->vars['amplitude'], $this->vars['period']);
 		}
 	
-		$this->echoImage($image);             
+		$this->echoImage($image);    
   	}
 	
 	function parseOptions($vars, $options) {
@@ -70,6 +72,7 @@ class Colorful {
 	function initColors($image, $colors, $alpha) {
 		$color_array = array();
 		$ralpha = $this->alphaPercent($alpha);
+		
 		for ($i = 0; $i < count($colors); $i++) { 
 			$rgb = $this->hexcolor2rgb($colors[$i]);
 			$color_array[$i] = imagecolorallocatealpha($image, $rgb['r'], $rgb['g'], $rgb['b'], $ralpha);
@@ -150,6 +153,7 @@ class Colorful {
 	}
 
 	function paintCode($image, $code, $height, $font, $font_size, $angle, $colors, $jumpy, $letterdist, $randomsize) {
+		
 		for ($i = 0; $i < strlen($code); $i++) {
 			$rangle = mt_rand(-$angle, $angle);
 			$fontsizemod = round($font_size*$randomsize);

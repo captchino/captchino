@@ -1,5 +1,6 @@
-<?
+<?php
 
+/*
 # Captchino - eye appealing, easy, modular captcha
 #
 # iVar < http://ivartech.com > - March 2012.
@@ -7,6 +8,7 @@
 # See COPYING for licence information.
 #
 # A simple random code generator
+*/
 
 class RandomCode {
 	
