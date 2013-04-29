@@ -59,11 +59,14 @@ session_start();
 
 if(strtolower($captcha) == strtolower($_SESSION['captchino']))
 {
-	$to = 'stamatmail@gmail.com';
-	$headers = 'From: '.$email. "\r\n" .
-    'Reply-To: '.$email . "\r\n" .
-    'X-Mailer: PHP/' . phpversion();
-	mail($to, $subject, $text);
+
+	// <<< YOUR CODE HERE !!! >>>
+	
+	//$to = 'your@email.com';
+	//$headers = 'From: '.$email. "\r\n" .
+    //'Reply-To: '.$email . "\r\n" .
+    //'X-Mailer: PHP/' . phpversion();
+	//mail($to, $subject, $text, $headers);
 	
 	fail();
 }
