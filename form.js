@@ -90,8 +90,10 @@ function appendError(error)
 }
 
 function onMessageError(response) {
-		$('.'+response[0]).addClass('error');
-		$('.'+response[0]+' .controls').append('<span class="help-inline">'+ response[1] +'</span>');
+		if(!$('.'+response[0]).hasClass('error')) {
+			$('.'+response[0]).addClass('error');
+			$('.'+response[0]+' .controls').append('<span class="help-inline">'+ response[1] +'</span>');
+		}
 }
 
 $(document).ready(function()
