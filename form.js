@@ -75,7 +75,7 @@ function clearErrors()
 function newCaptcha()
 {
 	$("#message-captcha").val('');
-	$("#captcha .captcha-container").empty().append($("<img src=\"captchino.php?size=28\"/>"));
+	$("#captcha .captcha-container").empty().append($("<img src=\"example.php\"/>"));
 	
 }
 

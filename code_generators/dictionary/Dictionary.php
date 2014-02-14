@@ -8,10 +8,18 @@
 # See COPYING for licence information.
 #
 # Simple dictionary reader, reads dictionary files and returns one word. Word
-# dictionaries took from Scrabble(tm) game rule book.
+# dictionaries taken from Scrabble(tm) game rule book.
 */
 
 class Dictionary {
+
+	static function getCode($code_config) {
+		if (!isset( $code_config['file'])) {
+			return Dictionary::getCodeByLetters($code_config['letters'], $code_config['mixcase']);
+		} else {
+			return Dictionary::getCodeByFile($code_config['file'], $code_config['mixcase']);
+		}
+	}
 
 	static function getCodeByLetters($num, $mixcase = false) {
 	
@@ -35,10 +43,10 @@ class Dictionary {
 				break;
 		}
 		
-		return Dictionary::getCode($file, $mixcase);
+		return Dictionary::getCodeByFile($file, $mixcase);
 	}
 	
-	static function getCode($file = null, $mixcase = false) {
+	static function getCodeByFile($file = null, $mixcase = false) {
 	
 		if (!isset($file)) {
 			$file = 'code_generators/dictionary/5letter.txt';

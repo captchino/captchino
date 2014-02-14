@@ -16,6 +16,7 @@ class Colorful {
 	public $vars = array( 'font' => 'graphic_generators/colorful/FreeSans.ttf',
 	'font_size' => 26,
 	'alpha' => 30,
+	'randalpha' => false,
 	'angle' => 15,
 	'strikethrough' => false,
 	'noise' => false,
@@ -71,9 +72,14 @@ class Colorful {
 	
 	function initColors($image, $colors, $alpha) {
 		$color_array = array();
-		$ralpha = $this->alphaPercent($alpha);
+		if (!$this->vars['randalpha']) {
+			$ralpha = $this->alphaPercent($alpha);
+		}
 		
 		for ($i = 0; $i < count($colors); $i++) { 
+			if($this->vars['randalpha']) {
+				$ralpha = $this->alphaPercent($alpha);
+			}
 			$rgb = $this->hexcolor2rgb($colors[$i]);
 			$color_array[$i] = imagecolorallocatealpha($image, $rgb['r'], $rgb['g'], $rgb['b'], $ralpha);
 		}
@@ -113,11 +119,15 @@ class Colorful {
 	function alphaPercent($alpha) {
 		if ($alpha <= 0) {
 			return 0;
-		} else if($alpha > 100) {
-			return 127;
-		} else {
-			return round(127 * $alpha/100);
+		} else if ($alpha > 100) {
+			$alpha = 100;
 		}
+		
+		if ($this->vars['randalpha']) {
+			$alpha = mt_rand(1, $alpha);
+		}
+		
+		return round(127 * $alpha/100);
 	}	
 	
 	function strikethrough($image, $height, $width, $font_size, $colors) {
